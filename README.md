@@ -30,7 +30,7 @@ The main steps are:
 | MAX_WAIT | Random wait time between min and max before the next request | 0 |
 
 ### Note:
-**These both files have to be editted every time you send a new number of requests. _This can't be automatically done by the methodology._**
+**These both files above have to be editted every time you send a new number of requests. _This can't be automatically done by the methodology._**
 Each NUM_THREADS_FROM (users) will send NUM_REQUEST requests.
 So, the total requests that will be executed are NUM_THREADS_FROM * NUM_REQUEST.
 Master divides the NUM_THREADS_FROM (users) by itself among the slaves.
@@ -91,8 +91,8 @@ If 5 requests fit in the timeframe. The test plan looks like this:
 "10 pods -----> 50 requests"
 "10 pods -----> 80 requests"
 
-"20 pods -----> 80 requests")
-"20 pods -----> 120 requests")
+"20 pods -----> 80 requests"
+"20 pods -----> 120 requests"
 ```
 Fix the number of instances as specified, edit the deployment files for number of requests and execute using wrapper_locust.py
 
