@@ -1,0 +1,54 @@
+kind: ReplicationController
+apiVersion: v1
+metadata:
+  name: locust-worker
+  namespace: vaibhav
+  labels:
+    name: locust
+    role: worker
+spec:
+  replicas: 10
+  selector:
+    name: locust
+    role: worker
+  template:
+    metadata:
+      labels:
+        name: locust
+        role: worker
+    spec:
+      containers:
+        - name: locustsync
+          imagePullPolicy: Always
+          image: image_name
+          env:
+          - name: LOCUST_MODE
+            value: "worker"
+          - name: LOCUST_MASTER
+            value: locust-master
+          - name: CLIENT_ID
+            value: "ADD_ID"
+          - name: CLIENT_SECRET
+            value: "ADD_SECRET"
+          - name: XSUAA_URL
+            value: "ADD_URL"
+          - name: API_NAMESPACE
+            value: "api"
+          - name: RESOURCE
+            value: "image"
+          - name: API_VERSION
+            value: "v2"
+          - name: HOST
+            value: "HOST_URL"
+          - name: NUMBER_SLAVES
+            value: "10"
+          - name: NUM_THREADS_FROM
+            value: "1"
+          - name: NUM_REQUESTS
+            value: "5"
+          - name: MIN_WAIT
+            value: "0"
+          - name: MAX_WAIT
+            value: "0"
+      imagePullSecrets:
+      - name: docker-registry-secret
