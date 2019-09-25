@@ -1,6 +1,8 @@
 # Abstract
 For web services, it’s important to conduct an intensive performance analysis to get to know the proper resource configuration needed to run it on a cloud environment. In a cloud environment, the running service instance can be scaled up and down according to the demand. In case there are no proper understandings of the demands of the service, the developer may choose an improper number of application instances which will result in the cost as well as performance issues. This performance analysis has to be conducted in a logical and optimum way to be ensured that the Service Level Agreements will be maintained. But the application even in the testing phase, in a cloud environment, is affected by factors like multi-tenancy. This creates variation in the results and the testing process becomes time-consuming which increases the cost and also impose doubt on the reliability of the results.
+
 The thesis comes up with an optimal and cost-effective methodology to validate the performance of cloud applications and to recommend the number of running instances of the application needed to fulfill the given SLAs. Furthermore, it also specifies a criterion for this variation and statistical methods to build reliability on the results.
+
 The methodology is tested on 3 applications running on major cloud platforms with Kubernetes as an application layer. The results proved that the proposed approach is a cost and time effective methodology which calculates the number of application instances for given SLA and establish confidence level on them.
 
 # Testing Methodology
