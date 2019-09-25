@@ -258,18 +258,6 @@ def pod_recommender(throughput_list, s_rate, pod, thr, sr, incorrect_pod, n_req,
 
 	plt.savefig('diagrams_loc.png')
 
-	# n = len(throughput_list)
-	# x = np.array(throughput_list).reshape(n,0)
-	# fig1 = plt.figure()
-	# ax = fig1.add_subplot(111, projection='3d')
-	# ax.plot_surface(throughput_list, s_rate, lg.predict(poly.fit_transform(X_list)), linewidth=0, antialiased=False, label='Pod recommendation')
-	# ax.set_xlabel('throughput')
-	# ax.set_ylabel('success rate')
-	# ax.set_zlabel('Pods')
-	# fig.set_size_inches(15, 15)
-	# fig.set_dpi(80)
-	# plt.savefig('diagrams_loc_3D.png')
-
 	#print("The recommended number pods for your SLA is: "+str(rec_pods))
 	n_time = len(ttime)
 	sum_time = sum(ttime)
