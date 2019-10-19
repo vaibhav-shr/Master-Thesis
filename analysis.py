@@ -19,6 +19,7 @@ inc_pod = []
 
 path = os.path.dirname(os.path.realpath(__file__))
 
+# Extract test results
 def getdata():
 	if os.path.exists("data.txt"):
 		with open("data.txt", "rb") as fp:
@@ -30,10 +31,11 @@ def getdata():
 			pickle.dump(pod, fp)
 		return pod
 
+# analyze test results
 def analyze(cpu, mem, thr, sr, accu, totime):
 	pod = getdata()
 	for p in pod:
-		throu, s_rate, n_reqs, t_time = analyze_requests(path, p)
+		throu, s_rate, n_reqs, t_time = analyze_requests(path, p) # analyze distributed test results
 		throughput.append(throu)
 		su_rate.append(s_rate)
 		n_requests.append(n_reqs)
@@ -41,10 +43,11 @@ def analyze(cpu, mem, thr, sr, accu, totime):
 		#print(throughput)
 		#print(su_rate)
 
-		res = analyze_resource(path, p, float(cpu), float(mem))
+		res = analyze_resource(path, p, float(cpu), float(mem)) # analyze resource profile
 		if res != 0:
 			inc_pod.append(res)
-
+	
+	# recommendation of replicas
 	pod_recommender(throughput, su_rate, pod, thr, sr, inc_pod, n_requests, total_time, accu, totime)
 		#print(inc_pod)
 
