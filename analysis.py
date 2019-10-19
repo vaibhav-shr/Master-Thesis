@@ -161,11 +161,11 @@ def analyze_resource(path, p, cpu, memory):
 				
 			elif cpu_count >= float(0.5 * (total-1)) and cpu_flag == 1 and i == 1:
 				pass
-			# In previously test CPU was consumed to max but not in second
+			# If previously test CPU was consumed to max but not in second
 			elif cpu_count < float(0.5 * (total-1)) and cpu_flag == 1 and i == 1:
 				cpu_flag = 0	
 				print("Resource usage undefined for the application for "+str(pods)+" pods with "+str(req[i])+" requests.")
-			# In previously test CPU was not consumed to max but did in second
+			# If previously test CPU was not consumed to max but did in second
 			elif cpu_count >= float(0.5 * (total-1)) and cpu_flag == 0 and i ==1:	
 				cpu_flag = 0
 				print("Resource usage undefined for the application for "+str(pods)+" pods with "+str(req[i])+" requests.")
@@ -183,11 +183,11 @@ def analyze_resource(path, p, cpu, memory):
 				
 			elif mem_count >= float(0.5 * (total-1)) and mem_flag == 1 and i == 1:
 				pass
-			# In previously test memory was consumed to max but not in second	
+			# If previously test memory was consumed to max but not in second	
 			elif cpu_count < float(0.5 * (total-1)) and mem_flag == 1 and i == 1:
 				mem_flag = 0
 				print("Resource usage undefined for the application for "+str(pods)+" pods with "+str(req[i])+" requests.")
-			# In previously test memory was not consumed to max but did in second	
+			# If previously test memory was not consumed to max but did in second	
 			elif cpu_count >= float(0.5 * (total-1)) and mem_flag == 0 and i ==1:	
 				mem_flag = 0
 				print("Resource usage undefined for the application for "+str(pods)+" pods with "+str(req[i])+" requests.")
