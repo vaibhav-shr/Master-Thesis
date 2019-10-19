@@ -6,8 +6,6 @@ import requests
 import time, gevent, sys
 import uuid
 
-requests.packages.urllib3.disable_warnings()  #for get_token
-
 client_id = os.environ.get('CLIENT_ID', 'id')  #for get_token.
 client_secret = os.environ.get('CLIENT_SECRET', 'secret')  #for get_token.
 xsuaa_url = os.environ.get('XSUAA_URL', 'https://host.com')  #for get_token.
